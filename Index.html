@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Calculator</title>
+
+<style>
+
+body{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+background:#020617;
+font-family:sans-serif;
+
+}
+
+.calculator{
+
+background:#1e293b;
+padding:25px;
+border-radius:15px;
+
+}
+
+.display{
+
+width:100%;
+height:60px;
+font-size:26px;
+text-align:right;
+margin-bottom:10px;
+
+}
+
+.grid{
+
+display:grid;
+grid-template-columns:repeat(4,70px);
+gap:10px;
+
+}
+
+button{
+
+padding:15px;
+font-size:18px;
+border:none;
+border-radius:10px;
+background:#334155;
+color:white;
+
+}
+
+.equal{
+
+grid-column:span 2;
+background:#22c55e;
+
+}
+
+footer{
+
+margin-top:20px;
+text-align:center;
+color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div>
+
+<div class="calculator">
+
+<input id="display" class="display" readonly>
+
+<div class="grid">
+
+<button onclick="clearDisplay()">C</button>
+<button onclick="add('/')">÷</button>
+<button onclick="add('*')">×</button>
+<button onclick="add('-')">-</button>
+
+<button onclick="add('7')">7</button>
+<button onclick="add('8')">8</button>
+<button onclick="add('9')">9</button>
+<button onclick="add('+')">+</button>
+
+<button onclick="add('4')">4</button>
+<button onclick="add('5')">5</button>
+<button onclick="add('6')">6</button>
+
+<button onclick="calculate()" class="equal">=</button>
+
+<button onclick="add('1')">1</button>
+<button onclick="add('2')">2</button>
+<button onclick="add('3')">3</button>
+
+<button onclick="add('0')">0</button>
+
+</div>
+
+</div>
+
+<footer>
+Developed by Bhagwat
+</footer>
+
+</div>
+
+<script>
+
+let display=document.getElementById("display");
+
+function add(v){display.value+=v;}
+
+function clearDisplay(){display.value="";}
+
+function calculate(){
+
+try{
+
+display.value=eval(display.value);
+
+}catch{
+
+display.value="Error";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
